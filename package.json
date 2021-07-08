@@ -21,10 +21,15 @@
   "homepage": "https://github.com/oma16/Zuri-linkedIn#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
     "express-validator": "^6.12.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.13.2"
+    "mongoose": "^5.13.2",
+    "path": "^0.12.7",
+    "validator": "^13.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.9"
