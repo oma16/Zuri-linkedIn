@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+html {
+	font-size: 10px;
+	font-family: 'Inter';
+	/* scroll-behavior: smooth; */
+}
+.container{
+	
+	width: 100%;
+	display: flex; 
+	align-items: center ;
+	justify-content: center ;
+    margin: auto;
+    margin-top: 13em !important;
+}
+.logo {
+    display: inline !important;
+    color: #0A66C2;
+    font-size: 2em;
+}
+.logo h1{
+    display: inline !important;
+    color: #0A66C2;
+    font-size: 2em;
+    
+}
+.logo button{
+    display: inline !important;
+    background-color: #0A66C2;
+    color: white;
+    font-size: 2em;
+    border: none;
+    padding: 0em 0.1em;
+    border-radius: 3px;
+}
+.sign-in{
+    width: 20%;
+    margin: auto;
+	display: flex; 
+	align-items: center ;
+	justify-content: center ;
+    box-sizing: border-box;
+    box-shadow: 0 5px 10px rgba(0, 0, 0,0.2);
+    margin-top: 5em !important;  
+    padding: 2em;
+}
+.sign{
+    display: block;
+   
+}
+.sign h2{
+    font-size: 3em;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+.sign h4{
+    font-size: 1.7em;
+    padding-top: 0.5em;
+    font-weight: 400;
+}
+.sign form{
+    font-size: 1.5em;
+    padding-top: 0.5em;
+}
+.email{
+    margin-top: 2em;
+    width: 100%;
+    padding:1em 1em ;
+    border: 2px solid gray;
+    border-radius: 7px;
+    
+}
+.password{
+    margin-top: 2em;
+    width: 100%;
+    padding:1em 1em ;
+    border: 2px solid gray;
+    border-radius: 7px;
+}
+.sign h5{
+    font-size: 1.3em;
+    padding-top: 0.5em;
+    font-weight: 500;
+    color:#0A66C2 ;
+}
+.sign button{
+    font-size: 1.3em;
+    color: white;
+    background-color: #0A66C2 ;
+    width: 100%;
+    margin-top: 3em;
+    padding: 1.3em 1em;
+    border: none;
+    border-radius: 3em;
+    margin-bottom: 1.5em;
+}
+.join{
+    display: flex; 
+	align-items: center ;
+	justify-content: center ;
+    margin: auto;
+    margin-top: 3em;
+    font-size: 1.5em;
+}
+.join a {
+    color:#0A66C2 ;
+}
+@media screen and (max-width:768px){
+    .container{
+	  width: 100%;
+        display: flex; 
+        align-items: center ;
+        justify-content: center ;
+        margin: auto;
+        margin-top: 6em !important;
+    }
+   
+    .logo {
+        display: inline !important;
+        color: #0A66C2;
+        font-size:1.5em;
+    }
+    .logo h1{
+        display: inline !important;
+        color: #0A66C2;
+        font-size: 1.5em;
+        
+    }
+    .logo button{
+        display: inline !important;
+        background-color: #0A66C2;
+        color: white;
+        font-size: 1.5em;
+        border: none;
+        padding: 0em 0.1em;
+        border-radius: 3px;
+    }
+    .sign-in{
+        width: 40%;
+        margin: auto;
+        display: flex; 
+        align-items: center ;
+        justify-content: center ;
+        box-sizing: border-box;
+        box-shadow: 0 5px 10px rgba(0, 0, 0,0.2);
+        margin-top: 5em !important;  
+        padding: 2em;
+    }
+    .sign h2{
+        font-size: 1.5em;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    .sign h4{
+        font-size: 1em;
+        padding-top: 0.8em;
+        font-weight: 400;
+    }
+    .sign form{
+        font-size: 1em;
+        padding-top: 0.5em;
+    }
+    .email{
+        margin-top: 2em;
+        width: 100%;
+        border: 1 solid gray;
+        border-radius: 7px;
+        font-size:0.9em ;
+    }
+}
+
+
