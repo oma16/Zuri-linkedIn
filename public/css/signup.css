@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+html {
+	font-size: 10px;
+	font-family: 'Inter';
+	/* scroll-behavior: smooth; */
+}
+.container{
+	
+	width: 100%;
+	display: flex; 
+	align-items: center ;
+	justify-content: center ;
+    margin: auto;
+    margin-top: 13em !important;
+}
+.logo {
+    display: inline !important;
+    color: #0A66C2;
+    font-size: 2em;
+}
+.logo h1{
+    display: inline !important;
+    color: #0A66C2;
+    font-size: 2em;
+    
+}
+.logo button{
+    display: inline !important;
+    background-color: #0A66C2;
+    color: white;
+    font-size: 2em;
+    border: none;
+    padding: 0em 0.1em;
+    border-radius: 3px;
+}
+.class{
+    text-align: center;
+}
+.class h2{
+    font-size: 3em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding-top: 1em;
+}
+.sign-in{
+    width: 20%;
+    margin: auto;
+	display: flex; 
+    box-sizing: border-box;
+    box-shadow: 0 5px 10px rgba(0, 0, 0,0.2);
+    margin-top: 5em !important;  
+    padding: 2em;
+}
+label{
+    font-size: 1.5em;
+    padding-top: 15em !important;
+}
+.email{
+    width: 100% !important;
+    margin-top: 1em;
+    border: 2px solid gray;
+    border-radius: 7px;
+    padding: 7px;
+}
+form h5{
+    text-align: center;
+    font-size: 1.2em;
+    padding-top: 1.5em;
+    line-height: 1.3em;
+}
+span{
+    color: #0A66C2;
+    
+}
+form .btn{
+    font-size: 1.3em;
+    color: white;
+    background-color: #0A66C2 ;
+    width: 100%;
+    margin-top: 3em;
+    padding: 1.3em 1em;
+    border: none;
+    border-radius: 3em;
+    margin-bottom: 1.5em;
+}
+form h6{
+    text-align: center;
+    font-size: 1em;
+}
+form .btn-1{
+    font-size: 1.3em;
+    color: #0A66C2 ;
+    background-color:white;
+    width: 100%;
+    margin-top: 3em;
+    padding: 1.3em 1em;
+    border: 1px solid  #0A66C2 ;
+    border-radius: 3em;
+    margin-bottom: 1.5em;
+}
+form h4{
+    font-size: 1.3em;
+    text-align: center;
+}
