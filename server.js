@@ -18,14 +18,14 @@ const app = express();
 //initialize express middleware
 
 app.use(express.json({extended:false}));
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 app.use(authroute);
 
 // view engine
  app.set('view engine', 'ejs');
 
 app.get("/", (req, res) => {
-    res.send("Welcome to linkedin!")
+    res.render("index")
 })
 
 //app.use(userRoutes);
