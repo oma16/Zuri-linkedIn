@@ -1,4 +1,4 @@
-const User = require('../models/usermodel');
+const {User,Name } = require('../models/usermodel');
 const jwt = require('jsonwebtoken')
 
 // handle errors
@@ -14,6 +14,9 @@ const handleErrors = (err) => {
     if(err.message === "incorrect password"){
         errors.password ='that password is incorrect';
     }
+
+   
+
     // duplicate error code 
     if (err.code === 11000){
         errors.email = "The email already exist";
@@ -43,12 +46,16 @@ const createToken = (id) => {
 module.exports.signup_get = (req,res) => {
     res.render('signup');
 }
+module.exports.signup2_get = (req,res) => {
+    res.render('signup2');
+}
 
 module.exports.login_get = (req,res) => {
     res.render('signin');
 }
 
 module.exports.signup_post = async (req,res) => {
+    
 const {email, password} = req.body;
 try{
  const user = await User.create ({email, password});
@@ -59,6 +66,22 @@ try{
 catch(err){
    const errors = handleErrors(err);
   res.status(400).json({errors});
+}
+}
+
+module.exports.signup2_post = async (req,res) => {
+const {firstname, lastname} = req.body;
+
+  	
+try{
+ const user = await Name.create ({firstname, lastname});
+ const token = createToken(user._id);
+ res.cookie('jwt',token,{ maxAge : maxAge * 1000, secure:true} );
+ res.status(200).json({user: user._id});
+}
+catch(err){
+   const errors = handleErrors(err);
+    res.status(400).json({errors});
 }
 }
 

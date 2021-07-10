@@ -197,3 +197,7 @@ form h4{
         }
 
 }
+.email-error,.password-error{
+    color: red;
+    font-size: 16px;
+}

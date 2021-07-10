@@ -200,3 +200,7 @@ html {
 @media screen and (max-width:480px){
 
 }
+.email-error,.password-error{
+    color: red;
+    font-size: 16px;
+}
