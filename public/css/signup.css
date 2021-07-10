@@ -53,12 +53,14 @@ html {
     width: 20%;
     margin: auto;
 	display: flex; 
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     box-shadow: 0 5px 10px rgba(0, 0, 0,0.2);
     margin-top: 5em !important;  
     padding: 2em;
 }
-label{
+form .text{
     font-size: 1.5em;
     padding-top: 15em !important;
 }
@@ -68,6 +70,7 @@ label{
     border: 2px solid gray;
     border-radius: 7px;
     padding: 7px;
+    margin-bottom: 2em;
 }
 form h5{
     text-align: center;
@@ -108,4 +111,89 @@ form .btn-1{
 form h4{
     font-size: 1.3em;
     text-align: center;
+}
+@media screen and (max-width:768px){
+    .container{
+        width: 100%;
+        display: flex;
+        justify-content: right;
+        margin-left: 2em;
+        margin-top: 6em !important;
+        }
+        .logo {
+            display: inline !important;
+            color: #0A66C2;
+            font-size: 1em;
+            align-items: left;
+            text-align: left;
+        }
+        .class{
+            text-align: left;
+        }
+        .class h2{
+            font-size: 2em;
+            font-weight: 300;
+            letter-spacing: 0px;
+            padding-top: 1em;
+            margin-left: 1em;
+        }
+        .sign-in{
+            width: 100%;
+            margin: 0px;
+            margin-right: 2em;
+            display: flex;
+            align-items: left; 
+            justify-content: left;
+            box-sizing: none;
+            box-shadow: none;
+            margin-top: 5em !important;  
+            padding: 2em;
+    
+        }
+        form{
+            margin-top: -3em;
+        }
+        .email{
+            width: 100% !important;
+            margin-top: 0em !important;
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 7px;
+        }
+        form h5{
+            display: none;
+        }
+        form .btn{
+            font-size: 1.2em;
+            color: white;
+            background-color: #0A66C2 ;
+            width: 100%;
+            margin-top: 1em;
+            padding: 1em 1em;
+            border: none;
+            border-radius: 3em;
+            margin-bottom: 1em;
+        }
+        form h6{
+            text-align: center;
+            font-size: 1em;
+            margin-top: 1em;
+        }
+        form .btn-1{
+            font-size: 1.2em;
+            color: #0A66C2 ;
+            background-color:white;
+            width: 100%;
+            margin-top: 1.5em;
+            padding: 1em 1em;
+            border: 1px solid  #0A66C2 ;
+            border-radius: 3em;
+            margin-bottom: 1em;
+        }
+        form h4{
+            font-size: 1.3em;
+            text-align: center;
+            margin-top: 1em;
+        }
+
 }
