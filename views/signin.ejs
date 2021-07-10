@@ -18,17 +18,60 @@
     <h2>Sign in</h2>
     <h4>Stay updated on your professional world</h4>
          <form>
-             <input type="text"  placeholder="Email or Phone" class="email"><br>
-             <input type="password"  placeholder="password" class="password">
+             <input type="text" name="email"  placeholder="Email or Phone" class="email" required><br>
+             <div class="email-error"></div>
+           
+             <input type="password" name="password" placeholder="password" class="password"required >
+             <div class="password-error"></div>
+             <h5>Forgot password?</h5>
+             <button>Sign In</button>
          </form>
-         <h5>Forgot password?</h5>
-         <button>Sign In</button>
+         
 
 </div>
 </div>
 <div class="join">
 <h4>New to LinkedIn?  <a href="/signup">Join now</a></h4>
 </div>
+<script>
+   
+
+
+        const form = document.querySelector('form');
+        const emailerror = document.querySelector('.email-error');
+        const passworderror = document.querySelector('.password-error');
+
+        form.addEventListener('submit',async (e) =>{
+            e.preventDefault();
+     // reset errors
+                  emailerror.textContent = '';
+                  passworderror.textContent = '';
+            //get the values
+            const email = form.email.value;
+            const password= form.password.value;
+
+            try{
+              const res = await fetch('/signin',{
+                  method:'POST',
+                  body: JSON.stringify({email,password}),
+                  headers:{'Content-Type':'application/json'}
+              });
+              const data = await res.json();
+              console.log(data);
+              if(data.errors){
+                  emailerror.textContent = data.errors.email;
+                  passworderror.textContent = data.errors.password;
+              }
+              if(data.user){
+                 location.assign('/dashboard');
+              }
+            }
+            catch(err){
+                console.log(err)
+            }
+            console.log(email,password)
+        })
+</script>
 <footer> </footer>
     </body>
 </html>

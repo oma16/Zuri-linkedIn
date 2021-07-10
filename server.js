@@ -3,6 +3,8 @@ const connectDB = require('./src/database');
 require('dotenv').config()  // Allow us to use the environmental variables in dotenv 
 const {PORT}= process.env;
 const authroute =require('./src/routes/authroute');
+const cookieParser = require('cookie-parser');
+const { requireAuth, checkUser } = require('./src/middleware/auth')
 // connect to db
 
 connectDB();
@@ -20,15 +22,19 @@ const app = express();
 app.use(express.json({extended:false}));
 app.use(express.static(__dirname + '/public'));
 app.use(authroute);
+app.use(cookieParser());
 
 // view engine
  app.set('view engine', 'ejs');
-
+//routes
+app.get("*",checkUser);
 app.get("/", (req, res) => {
     res.render("index")
 })
+app.get("/dashboard",requireAuth, (req, res) => 
+    res.render("dashboard"))
+ 
 
-//app.use(userRoutes);
 
 //Port
 const port = process.env.PORT || PORT;

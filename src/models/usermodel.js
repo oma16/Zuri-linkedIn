@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
     password:{
         type:String,
         required: [true, 'Please enter a password'],
-        minlength:[8, 'Minimum password lenght is 8 character']
+        minlength:[6, 'Minimum password lenght is 6 character']
     },
 });
 
@@ -26,5 +26,18 @@ userSchema.pre('save', async function(next){
     next();
 })
 
-const User = mongoose.model('User', userSchema );
+// static method to login user
+userSchema.statics.signin = async function (email, password){
+    const user = await this.findOne({email});
+    if(user){
+       const auth = await bcrypt.compare(password,user.password);
+       if(auth){
+           return user;
+       }
+       throw Error('incorrect password');
+    }
+    throw Error('incorrect email');
+}
+
+const User = mongoose.model('user', userSchema );
 module.exports = User;
