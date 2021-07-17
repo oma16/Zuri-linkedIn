@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap');
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+html {
+	font-size: 10px;
+	font-family: 'Inter';
+	/* scroll-behavior: smooth; */
+}
+.container{
+
+    width: 20%;
+    margin: auto;
+    box-sizing: border-box;
+    box-shadow: 0 5px 10px rgba(0, 0, 0,0.2);
+    margin-top: 9em !important;  
+    padding: 2em;
+}
+ 
+.header{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-gap: 1em;
+
+}
+ 
+img{
+ width: 70px;
+}
+.grid-1 h1{
+    font-size: 3em;
+}
+.grid-1 h3{
+    font-size: 2em;
+    font-weight: 300;
+    line-height: 1em;
+    
+}
+button{
+    margin-top: 1em;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #478cd1;
+    border-radius: 1em;
+    color: #1f28c1;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+}
+
+.account h1{
+font-size: 2.5em;
+margin-top: 1em;
+}
+a{
+    display: block;
+    color: #b3b3b3;
+    font-size: 2em;
+    margin-top: 0.6em;
+}
+.Manage h1{
+    font-size: 2.5em;
+    margin-top: 1em;
+    }
+@media screen and (max-width:768px){
+    .container{
+
+        width: 100%;
+        margin: auto;
+        box-sizing: border-box;
+        box-shadow: none;
+        margin-top: 2em !important;  
+        padding: 2em;
+    }
+}

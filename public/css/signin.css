@@ -112,7 +112,41 @@ html {
     color:#0A66C2 ;
 }
 
-
+.logo-last {
+    display: inline !important;
+    color: black;
+    font-size: 2em;
+    margin-left: 2.9em !important;   
+    
+}
+.logo-last h1{
+    display: inline !important;
+    color: black;
+    font-size: 1em;
+    
+}
+.logo-last button{
+    display: inline !important;
+    background-color: black;
+    color: white;
+    font-size: 1em;
+    border: none;
+    padding: 0em 0.1em;
+    border-radius: 3px;
+}
+.last{
+    padding: 1em;
+}
+.last a{
+    padding: 2em;
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 14em;
+    background-color: white;
+}
 @media screen and (max-width:768px){
 
     
@@ -188,6 +222,9 @@ html {
         border-radius: 3em;
         margin-bottom: 0em;
         
+    }
+    footer{
+        display: none;
     }
     .join{
        display: flex;
