@@ -51,7 +51,7 @@ html {
     padding-top: 1em;
 }
 .sign-in{
-    width: 20%;
+    width: 40%;
     margin: auto;
 	display: flex; 
     justify-content: center;
@@ -243,4 +243,9 @@ footer{
             display: none;
         }
         
+
+}
+.email-error,.password-error{
+    color: red;
+    font-size: 16px;
 }

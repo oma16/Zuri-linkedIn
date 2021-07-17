@@ -20,12 +20,13 @@
     <div class="sign-in">
         <form>
             <label class="text">Email or Phone number</label>
-            <input type="text" class="email">
-
+            <input type="text" name="email" class="email" required>
+             <div class="email-error"></div>
             <label class="text">Password (6 or more characters)</label>
-            <input type="password" class="email">
+            <input type="password" name="password" class="email" required>
+            <div class="password-error"></div>
             <h5>By clicking Agree & Join, you agree to the LinkedIn  <span>User Agreement, Privacy Policy,</span> and <span>Cookie Policy</span> .</h5>
-            <button class="btn">Agree & Join</button>
+            <button class="btn ">Agree & Join</button>
             <h6>or</h6>
             <button class="btn-1">Join with Google</button>
             <h4>Already on LinkedIn?  <a href="/signin">Join now</a></h4>
@@ -50,5 +51,43 @@
             <a href="#">Languages</a>
            </div>
          </footer>
+    <script>
+        const emailerror = document.querySelector('.email-error');
+        const passworderror = document.querySelector('.password-error');
+
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit',async (e) =>{
+            e.preventDefault();
+     // reset errors
+                  emailerror.textContent = '';
+                  passworderror.textContent = '';
+            //get the values
+            const email = form.email.value;
+            const password= form.password.value;
+
+            try{
+              const res = await fetch('/signup',{
+                
+                  method:'POST',
+                  body: JSON.stringify({email,password}),
+                  headers:{'Content-Type':'application/json'}
+              });
+              const data = await res.json();
+              console.log(data);
+              if(data.errors){
+                  emailerror.textContent = data.errors.email;
+                  passworderror.textContent = data.errors.password;
+              }
+              if(data.user){
+                  location.assign('/signup2');
+              }
+            }
+            catch(err){
+                console.log(err)
+            }
+            console.log(email,password)
+        })
+    </script>
     </body>
 </html>

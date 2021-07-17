@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=" UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+        <link rel="stylesheet" type="text/css" href="css/signup.css">
+        <title>LinkedIn || Home</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="logo">
+            <h1>Linked</h1>
+            <button>in</button>
+        </div>
+    </div>
+    <div class="class">
+        <h2>Make the most of your professional life</h2>
+    </div>
+    <div class="sign-in">
+        <form>
+            <label class="text">Firstname</label>
+            <input type="text" name="firstname" class="email" required>
+             <div class="firstname-error"></div>
+            <label class="text">Lastname</label>
+            <input type="text" name="lastname" class="email" required>
+            <div class="lastname-error"></div>
+            <button class="btn-1">Continue</button>
+           
+        </form>
+        
+    </div>
+    <script>
+        const firstnameerror = document.querySelector('.firstname-error');
+        const lastnameerror = document.querySelector('.lastname-error');
+
+
+        const form = document.querySelector('form');
+        form.addEventListener('submit',async (e) =>{
+            e.preventDefault();
+     // reset errors
+             firstnameerror.textContent = '';
+             lastnameerror.textContent = '';
+            //get the values
+            const firstname = form.firstname.value;
+            const lastname= form.lastname.value;
+
+            try{
+              const res = await fetch('/signup2',{
+                  method:'POST',
+                  body: JSON.stringify({firstname,lastname}),
+                  headers:{'Content-Type':'application/json'}
+              });
+              const data = await res.json();
+              console.log(data);
+              if(data.errors){
+                firstnameerror.textContent = data.errors.firstname;
+                  lastnameerror.textContent = data.errors.lastname;
+              }
+              if( data.user){
+                  location.assign('/');
+              }
+            }
+            catch(err){
+                console.log(err)
+            }
+            console.log(firstname,lastname)
+        })
+    </script>
+    <footer> </footer>
+    </body>
+</html>

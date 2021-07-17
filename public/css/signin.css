@@ -39,7 +39,7 @@ html {
     border-radius: 3px;
 }
 .sign-in{
-    width: 20%;
+    width: 40%;
     margin: auto;
 	display: flex; 
 	align-items: center ;
@@ -236,4 +236,8 @@ footer{
 }
 @media screen and (max-width:480px){
 
+}
+.email-error,.password-error{
+    color: red;
+    font-size: 16px;
 }
